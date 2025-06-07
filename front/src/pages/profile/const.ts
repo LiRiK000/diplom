@@ -1,63 +1,65 @@
-import { ava } from "./ava";
+import ava from "./ava.png";
 
 type User = { 
-  name: string;
-  email: string;
-  avatar?: string; 
-  role: 'ADMIN' | 'USER';
-  registrationDate: string; 
+    id: number;
+    username: string;
+    password: string;
+    email: string;
+    avatar?: string; 
+    createdAt: string; 
+    refreshToken?: string | null;
+    isAdmin: boolean;
 };
 
-
-type tovar = { 
-
-    id:number,
-    title:string,
-    price:number,
-    img:string,
-    rating:number,
+type Product = { 
+    id: number;
+    title: string;
+    price: number;
+    img: string;
+    rating: number;
 };
-
 
 export const users: User[] = [
   {
-    name: 'admin',
+    id: 1,
+    username: 'admin',
+    password: 'admin123', 
     email: 'adminAlex.ru',
     avatar: ava,
-    role: 'ADMIN',
-    registrationDate: '07.06.2025',
+    createdAt: '2025-06-07',
+    refreshToken: null,
+    isAdmin: true,
   },
   {
-    name: 'user1',
+    id: 2,
+    username: 'user1',
+    password: 'user123',
     email: 'user1@example.com',
-    role: 'USER',
-    registrationDate: '01.05.2024',
+    createdAt: '2025-06-01',
+    isAdmin: false,
   },
 ];
 
-
-export const tovarList:tovar[] = [
-
-{
-      id: 1,
-      title: 'Футболки для малышей комплект 2 шт',
-      price: 3250,
-      img: 'https://basket-14.wbbasket.ru/vol2084/part208495/208495470/images/big/1.webp',
-      rating: 2,
-    },
-    {
-      id: 2,
-      title: 'Детский вязаный костюм',
-      price: 1015,
-      img: 'https://basket-13.wbbasket.ru/vol1973/part197300/197300771/images/c246x328/1.webp',
-      rating: 1,
-    },
-    {
-      id: 3,
-      title: 'Спортивный костюм для девочки',
-      price: 1723,
-      img: 'https://basket-12.wbbasket.ru/vol1884/part188449/188449379/images/c246x328/1.webp',
-      rating: 1,
-    },
-
-]
+export const productList: Product[] = [
+  {
+    id: 1,
+    title: 'Футболки для малышей комплект 2 шт',
+    price: 3250,
+    img: 'https://basket-14.wbbasket.ru/vol2084/part208495/208495470/images/big/1.webp',
+    rating: 2,
+  },
+  {
+    id: 2,
+    title: 'Детский вязаный костюм',
+    price: 1015,
+    img: 'https://basket-13.wbbasket.ru/vol1973/part197300/197300771/images/c246x328/1.webp',
+    rating: 1,
+  },
+  {
+    id: 3,
+    title: 'Спортивный костюм для девочки',
+    price: 1723,
+    img: 'https://basket-12.wbbasket.ru/vol1884/part188449/188449379/images/c246x328/1.webp',
+    rating: 1,
+  },
+];
